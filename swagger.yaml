@@ -677,7 +677,7 @@ components:
         phone:
           type: string
           description: 전화번호
-          example: 010-3453-0311
+          example: 010-1111-2222
     LoginRequestDto:
       type: object
       properties:
@@ -761,12 +761,12 @@ components:
     PageItemResponseDto:
       type: object
       properties:
-        totalPages:
-          type: integer
-          format: int32
         totalElements:
           type: integer
           format: int64
+        totalPages:
+          type: integer
+          format: int32
         size:
           type: integer
           format: int32
@@ -781,15 +781,15 @@ components:
           type: array
           items:
             "$ref": "#/components/schemas/SortObject"
+        first:
+          type: boolean
+        last:
+          type: boolean
         numberOfElements:
           type: integer
           format: int32
         pageable:
           "$ref": "#/components/schemas/PageableObject"
-        first:
-          type: boolean
-        last:
-          type: boolean
         empty:
           type: boolean
     PageableObject:
@@ -804,10 +804,10 @@ components:
             "$ref": "#/components/schemas/SortObject"
         paged:
           type: boolean
-        pageNumber:
+        pageSize:
           type: integer
           format: int32
-        pageSize:
+        pageNumber:
           type: integer
           format: int32
         unpaged:
